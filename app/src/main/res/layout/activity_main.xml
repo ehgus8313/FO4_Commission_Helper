@@ -11,198 +11,205 @@
         android:gravity="center"
         android:background="#707070">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="10dp"
-    android:background="#1B1B1B">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="이적 시장 수수료 계산기"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textColor="#ffffff"/>
-
-</LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#232323"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:paddingLeft="30dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:width="80dp"
-            android:textColor="#ffffff"
-            android:text="판매금액 :"
-            android:textSize="18dp"
-            />
-        <EditText
-            android:id="@+id/Saleamount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:width="200dp"
-            android:background="#4E4E4E"
-            android:textColorHint="#ffffff"
-            android:textColor="#ffffff"
-            android:hint="입력후 Enter 클릭"
-            android:textSize="18dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#232323"
-        android:layout_marginBottom="10dp"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:paddingLeft="30dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:width="80dp"
-            android:textColor="#ffffff"
-            android:text="수 수 료 :"
-            android:textSize="18dp"
-            />
-        <EditText
-            android:id="@+id/Fee"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:width="250dp"
-            android:background="#4E4E4E"
-            android:textColorHint="#ffffff"
-            android:textColor="#ffffff"
-            android:hint="자동으로 계산됨"
-            android:textSize="18dp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#232323"
-        android:layout_marginBottom="10dp"
-        android:paddingLeft="30dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="할인율"
-            android:textColor="#ffffff"/>
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fee_radio1"
-                android:textColor="#ffffff"
-                android:checked="true"
-                android:text="0% (미적용)"/>
-
-            <RadioButton
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fee_radio2"
-                android:textColor="#ffffff"
-                android:text="30% (TOP CLASS 할인)"/>
-
-            <RadioButton
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fee_radio3"
-                android:textColor="#ffffff"
-                android:text="40% (PC방 할인)"/>
-
-            <RadioButton
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fee_radio4"
-                android:textColor="#ffffff"
-                android:text="50% (PC방 + TOP 할인)"/>
-
-            <RadioButton
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fee_radio5"
-                android:textColor="#ffffff"
-                android:text="60% (PC방 할인 + 이벤트)"/>
-
-            <RadioButton
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fee_radio6"
-                android:textColor="#ffffff"
-                android:text="70% (PC방 + TOP 할인 + 이벤트)"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fee_radio7"
-                android:textColor="#ffffff"
-                android:paddingRight="5dp"
-                android:text="직접 입력 (%)"/>
-        </RadioGroup>
-
         <LinearLayout
-            android:id="@+id/lay"
-            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#1B1B1B">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이적 시장 수수료 계산기"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:textColor="#ffffff"/>
+
+        </LinearLayout>
+        <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#232323"
-            android:paddingLeft="30dp">
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="30dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="80dp"
+                android:textColor="#ffffff"
+                android:text="판매금액 :"
+                android:textSize="18dp"
+                />
+            <EditText
+                android:id="@+id/Saleamount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="200dp"
+                android:background="#4E4E4E"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:hint="입력후 계산하기 클릭"
+                android:textSize="18dp"
+                android:digits="0123456789"
+                android:inputType="number"
+                />
+        </LinearLayout>
 
-
-        <EditText
-            android:id="@+id/Self"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:width="200dp"
-            android:background="#4E4E4E"
-            android:textColorHint="#ffffff"
-            android:hint="숫자로 입력"
-            android:textSize="18dp" />
+            android:background="#232323"
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="30dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="80dp"
+                android:textColor="#ffffff"
+                android:text="기본 수수료 :"
+                android:textSize="18dp"
+                />
+            <EditText
+                android:id="@+id/Fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="250dp"
+                android:background="#4E4E4E"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:hint="자동으로 계산됨"
+                android:textSize="18dp"
+                android:enabled="false"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#232323"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="30dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="할인율"
+                android:textColor="#ffffff"/>
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fee_radio1"
+                    android:textColor="#ffffff"
+                    android:checked="true"
+                    android:text="0% (미적용)"/>
+
+                <RadioButton
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fee_radio2"
+                    android:textColor="#ffffff"
+                    android:text="30% (TOP CLASS 할인)"/>
+
+                <RadioButton
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fee_radio3"
+                    android:textColor="#ffffff"
+                    android:text="40% (PC방 할인)"/>
+
+                <RadioButton
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fee_radio4"
+                    android:textColor="#ffffff"
+                    android:text="50% (PC방 + TOP 할인)"/>
+
+                <RadioButton
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fee_radio5"
+                    android:textColor="#ffffff"
+                    android:text="60% (PC방 할인 + 이벤트)"/>
+
+                <RadioButton
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fee_radio6"
+                    android:textColor="#ffffff"
+                    android:text="70% (PC방 + TOP 할인 + 이벤트)"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fee_radio7"
+                    android:textColor="#ffffff"
+                    android:paddingRight="5dp"
+                    android:text="직접 입력 (%)"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/lay"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#232323"
+                android:paddingLeft="30dp">
+
+
+                <EditText
+                    android:id="@+id/Self"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:width="200dp"
+                    android:background="#4E4E4E"
+                    android:textColorHint="#ffffff"
+                    android:textColor="#ffffff"
+                    android:hint="숫자로 입력"
+                    android:digits="0123456789"
+                    android:inputType="number"
+                    android:gravity="end"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Button2"
+                    android:text="입력"
+                    android:layout_marginRight="30dp"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/Button2"
-                android:text="입력"
+                android:id="@+id/Button1"
+                android:text="계산하기"
                 android:layout_marginRight="30dp"
                 android:textSize="18dp"/>
         </LinearLayout>
-
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/Button1"
-            android:text="계산하기"
-            android:layout_marginRight="30dp"
-            android:textSize="18dp"/>
-    </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -229,18 +236,19 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:hint="자동으로 계산됨"
+                android:enabled="false"
                 android:textSize="18dp" />
         </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#232323"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="30dp"
-        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#232323"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="30dp"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -259,8 +267,9 @@
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
                 android:hint="자동으로 계산됨"
+                android:enabled="false"
                 android:textSize="18dp" />
 
-    </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

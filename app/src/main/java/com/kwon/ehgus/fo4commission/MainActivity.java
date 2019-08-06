@@ -1,6 +1,5 @@
 package com.kwon.ehgus.fo4commission;
 
-import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,21 +10,24 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 public class MainActivity extends AppCompatActivity {
+
 
     private EditText Saleamount, Fee, Self, Discount, Receive;
     private Button Button1, Button2;
     private RadioGroup radioGroup;
     private double feeamount=0;
     private RadioButton fee_radio1, fee_radio2, fee_radio3, fee_radio4 ,fee_radio5, fee_radio6, fee_radio7;
-
+    private LinearLayout lay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //입력부분설정
         Saleamount = (EditText) findViewById(R.id.Saleamount);
         Fee = (EditText) findViewById(R.id.Fee);
         Self = (EditText) findViewById(R.id.Self);
@@ -48,32 +50,49 @@ public class MainActivity extends AppCompatActivity {
         fee_radio5.setOnClickListener(radioButtonClickListener);
         fee_radio6.setOnClickListener(radioButtonClickListener);
         fee_radio7.setOnClickListener(radioButtonClickListener);
+        lay = (LinearLayout) findViewById(R.id.lay);
 
         //라디오 그룹 설정
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
-            //계산버튼
-            Button1 = (Button) findViewById(R.id.Button1);
-            Button1.setOnClickListener(new Button.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    String tmp1 = Saleamount.getText().toString();
-                    if (Saleamount.length() <= 0) {
-                        Toast.makeText(MainActivity.this, "금액을 입력해주세요.", Toast.LENGTH_SHORT).show();
-                    } else {
-                        //판매금액 받기
-                        Integer result = (int) (Integer.parseInt(tmp1) * 0.3);
-                        Integer tmp3 = (int) ((Integer.parseInt(tmp1) - (Integer.parseInt(tmp1) * 0.3)) + (Integer.parseInt(tmp1) * 0.3) * feeamount);
-                        Integer tmp4 = (int) ((Integer.parseInt(tmp1) * 0.3) * feeamount);
-                        Fee.setText(result.toString());
-                        Receive.setText(tmp3.toString());
-                        Discount.setText("+" + tmp4.toString());
-                        System.out.println(feeamount);
+        //계산버튼
+        Button1 = (Button) findViewById(R.id.Button1);
+        Button1.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String tmp1 = Saleamount.getText().toString();
+                if (Saleamount.length() <= 0) {
+                    Toast.makeText(MainActivity.this, "금액을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                } else {
+                    //판매금액 받기
+                    Integer result = (int) (Integer.parseInt(tmp1) * 0.3);
+                    Integer tmp3 = (int) ((Integer.parseInt(tmp1) - (Integer.parseInt(tmp1) * 0.3)) + (Integer.parseInt(tmp1) * 0.3) * feeamount);
+                    Integer tmp4 = (int) ((Integer.parseInt(tmp1) * 0.3) * feeamount);
+                    Fee.setText(result.toString());
+                    Receive.setText(tmp3.toString());
+                    Discount.setText("+" + tmp4.toString());
+                    System.out.println(feeamount);
+                }
+            }
+        });
+
+        Button2 = (Button) findViewById(R.id.Button2);
+        Button2.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ( Self.length() <= 0 ) {
+                    Toast.makeText(MainActivity.this, "숫자를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                }else{
+                    String fee = Self.getText().toString();
+                    Toast.makeText(MainActivity.this, "수수료 할인율 : " + fee + "%", Toast.LENGTH_SHORT).show();
+                    feeamount = Double.parseDouble(fee) / 100;
+                    if (fee == null) {
+                        Toast.makeText(MainActivity.this, "할인율을 입력해주세요.", Toast.LENGTH_SHORT).show();
                     }
                 }
-            });
-        }
-
+            }
+        });
+    }
     //라디오 버튼 클릭 리스너
     RadioButton.OnClickListener radioButtonClickListener = new RadioButton.OnClickListener() {
         @Override
@@ -91,27 +110,13 @@ public class MainActivity extends AppCompatActivity {
             }else if(fee_radio6.isChecked()) {
                 feeamount = 0.7;
             }else if(fee_radio7.isChecked()) {
-                LinearLayout lay = (LinearLayout) findViewById(R.id.lay);
-                lay.setVisibility(View.VISIBLE);
-                Button2 = (Button) findViewById(R.id.Button2);
-                Button2.setOnClickListener(new Button.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if ( Self.length() <= 0 ) {
-                            Toast.makeText(MainActivity.this, "숫자를 입력해주세요.", Toast.LENGTH_SHORT).show();
-                        }else{
-                        String fee = Self.getText().toString();
-                        feeamount = Double.parseDouble(fee) / 100;
-                        }
-                    }
-                });
+                lay.setVisibility(VISIBLE);
+            }
+
+            if(fee_radio7.isChecked() == false) {
+                lay.setVisibility(GONE);
             }
         }
 
     };
-
-
-
-
-
 }
