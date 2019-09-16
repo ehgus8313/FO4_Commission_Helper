@@ -14,7 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:background="#1B1B1B">
 
             <TextView
@@ -33,7 +33,7 @@
             android:background="#232323"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:paddingLeft="30dp"
             >
             <TextView
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#232323"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:paddingLeft="30dp"
@@ -74,8 +74,8 @@
                 android:layout_height="wrap_content"
                 android:width="80dp"
                 android:textColor="#ffffff"
-                android:text="기본 수수료 :"
-                android:textSize="18dp"
+                android:text="기본수수료 :"
+                android:textSize="15dp"
                 />
             <EditText
                 android:id="@+id/Fee"
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#232323"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:paddingLeft="30dp"
             >
             <TextView
@@ -211,6 +211,34 @@
                 android:textSize="18dp"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#232323"
+            android:paddingTop="15dp"
+            android:paddingLeft="30dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:textColor="#ffffff"
+                android:text="할인 전 금액 : "
+                android:textSize="15dp"
+                />
+            <EditText
+                android:id="@+id/origin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="250dp"
+                android:background="#4E4E4E"
+                android:textColorHint="#ffffff"
+                android:textColor="#ffffff"
+                android:hint=""
+                android:enabled="false"
+                android:textSize="18dp" />
+        </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
