@@ -74,12 +74,12 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "금액을 입력해주세요.", Toast.LENGTH_SHORT).show();
                 } else {
                     //판매금액 받기
-                    Integer original = (int) (Integer.parseInt(tmp1) - (Integer.parseInt(tmp1) * 0.3));
-                    Integer result = (int) (Integer.parseInt(tmp1) * 0.3);
-                    Integer tmp3 = (int) ((Integer.parseInt(tmp1) - (Integer.parseInt(tmp1) * 0.3)) + (Integer.parseInt(tmp1) * 0.3) * feeamount);
-                    Integer tmp4 = (int) ((Integer.parseInt(tmp1) * 0.3) * feeamount);
+                    long original = (long) (Long.parseLong(tmp1) - (Long.parseLong(tmp1) * 0.3));
+                    long result = (long) (Long.parseLong(tmp1) * 0.3);
+                    long tmp3 = (long) ((Long.parseLong(tmp1) - (Long.parseLong(tmp1) * 0.3)) + (Long.parseLong(tmp1) * 0.3) * feeamount);
+                    long tmp4 = (long) ((Long.parseLong(tmp1) * 0.3) * feeamount);
 
-                    //천단위 기호 변환환
+                    //천단위 기호 변환
                     long resultlong = Long.parseLong(String.valueOf(result));
                     long tmp3long = Long.parseLong(String.valueOf(tmp3));
                     long tmp4long = Long.parseLong(String.valueOf(tmp4));
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             if(!TextUtils.isEmpty(charSequence.toString()) && !charSequence.toString().equals(Editresult)){
-                Editresult = format.format(Double.parseDouble(charSequence.toString().replaceAll(",","")));
+                Editresult = format.format(Long.parseLong(charSequence.toString().replaceAll(",","")));
                 Saleamount.setText(Editresult);
                 Saleamount.setSelection(Editresult.length());
             }
