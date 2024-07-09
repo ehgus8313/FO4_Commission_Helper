@@ -52,7 +52,7 @@
                 android:background="#4E4E4E"
                 android:textColorHint="#ffffff"
                 android:textColor="#ffffff"
-                android:hint="입력후 계산하기 클릭"
+                android:hint="판매 금액 입력"
                 android:textSize="18dp"
                 android:digits="0123456789"
                 android:inputType="number"
@@ -105,110 +105,72 @@
                 android:textSize="20dp"
                 android:text="할인율"
                 android:textColor="#ffffff"/>
-            <RadioGroup
+            <LinearLayout
                 android:id="@+id/radioGroup"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <RadioButton
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/fee_radio1"
-                    android:textColor="#ffffff"
-                    android:checked="true"
-                    android:text="0% (미적용)"/>
 
-                <RadioButton
+                <CheckBox
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/fee_radio2"
                     android:textColor="#ffffff"
-                    android:text="30% (TOP CLASS 할인)"/>
+                    android:text="20% (TOP CLASS 할인)"/>
 
-                <RadioButton
+                <CheckBox
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/fee_radio3"
                     android:textColor="#ffffff"
-                    android:text="40% (PC방 할인)"/>
-
-                <RadioButton
-                    android:layout_weight="1"
+                    android:text="30% (PC방 할인)"/>
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/fee_radio4"
-                    android:textColor="#ffffff"
-                    android:text="50% (PC방 + TOP 할인)"/>
-
-                <RadioButton
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/fee_radio5"
-                    android:textColor="#ffffff"
-                    android:text="60% (PC방 할인 + 이벤트)"/>
-
-                <RadioButton
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/fee_radio6"
-                    android:textColor="#ffffff"
-                    android:text="70% (PC방 + TOP 할인 + 이벤트)"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/fee_radio7"
-                    android:textColor="#ffffff"
-                    android:paddingRight="5dp"
-                    android:text="직접 입력 (%)"/>
-            </RadioGroup>
-
-            <LinearLayout
-                android:id="@+id/lay"
-                android:visibility="gone"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#232323"
-                android:paddingLeft="30dp">
+                    android:background="#232323">
+                    <CheckBox
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fee_radio4"
+                        android:textColor="#ffffff"
+                        android:text=""/>
+                    <EditText
+                        android:id="@+id/CouponFee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:width="250dp"
+                        android:background="#4E4E4E"
+                        android:textColorHint="#ffffff"
+                        android:textColor="#ffffff"
+                        android:hint="쿠폰 입력 %"
+                        android:textSize="18dp"
+                        android:digits="0123456789"
+                        android:inputType="number"
+                        android:enabled="false"
+                        />
+                </LinearLayout>
 
 
-                <EditText
-                    android:id="@+id/Self"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:width="200dp"
-                    android:background="#4E4E4E"
-                    android:textColorHint="#ffffff"
-                    android:textColor="#ffffff"
-                    android:hint="숫자로 입력"
-                    android:digits="0123456789"
-                    android:inputType="number"
-                    android:gravity="end"
-                    android:textSize="18dp" />
+<!--                <CheckBox-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:id="@+id/fee_radio4"-->
+<!--                    android:textColor="#ffffff"-->
+<!--                    android:text="50% (PC방 + TOP 할인)"/>-->
+<!--                <CheckBox-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:id="@+id/fee_radio7"-->
+<!--                    android:textColor="#ffffff"-->
+<!--                    android:paddingRight="5dp"-->
+<!--                    android:text="직접 입력 (%)"/>-->
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/Button2"
-                    android:text="입력"
-                    android:layout_marginRight="30dp"
-                    android:textSize="18dp"/>
             </LinearLayout>
-
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/Button1"
-                android:text="계산하기"
-                android:layout_marginRight="30dp"
-                android:textSize="18dp"/>
         </LinearLayout>
 
         <LinearLayout
